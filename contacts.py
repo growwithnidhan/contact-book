@@ -13,3 +13,9 @@ print(add_contact(contacts, "Asha", "9876543210"))
 print(add_contact(contacts, "asha", "1111111111"))
 print(add_contact(contacts, "Riya", "9123456789", "riya@example.com"))
 print(contacts)
+
+def find_contact(contacts,name):
+    key = name.lower()
+    return contacts.get(key)
+print(find_contact(contacts,"ASHA"))
+print(find_contact(contacts, "Meera"))
