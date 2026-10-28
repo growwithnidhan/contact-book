@@ -19,3 +19,16 @@ def find_contact(contacts,name):
     return contacts.get(key)
 print(find_contact(contacts,"ASHA"))
 print(find_contact(contacts, "Meera"))
+
+def delete_contact(contacts, name):
+    key = name.lower()
+    if key in contacts:
+        # remove the key, then return True
+        contacts.pop(key)
+        return True
+    else:
+        return False
+    # otherwise return False
+print(delete_contact(contacts, "RIYA"))
+print(delete_contact(contacts, "Riya"))
+print(contacts)
