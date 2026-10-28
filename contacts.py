@@ -32,3 +32,17 @@ def delete_contact(contacts, name):
 print(delete_contact(contacts, "RIYA"))
 print(delete_contact(contacts, "Riya"))
 print(contacts)
+
+
+def add_tag(contacts, name, tag):
+    key = name.lower()
+    if key not in contacts:
+        # return False
+        return False
+    contacts[key]["tags"].add(tag.lower())
+    return True
+    # add tag.lower() to the set, then return True
+print(add_tag(contacts, "Asha", "Hostel"))
+print(add_tag(contacts, "asha", "hostel"))
+print(add_tag(contacts, "Meera", "friend"))
+print(contacts["asha"]["tags"])
