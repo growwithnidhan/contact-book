@@ -46,3 +46,22 @@ print(add_tag(contacts, "Asha", "Hostel"))
 print(add_tag(contacts, "asha", "hostel"))
 print(add_tag(contacts, "Meera", "friend"))
 print(contacts["asha"]["tags"])
+
+
+def search_by_tag(contacts, tag):
+    tag = tag.lower()
+    matches = []
+    for name, details in contacts.items():
+        if tag in details["tags"]:
+            matches.append(name)
+    return matches
+
+add_contact(contacts, "Riya", "9123456789")
+add_contact(contacts, "Meera", "9000000000")
+add_tag(contacts, "Riya", "hostel")
+add_tag(contacts, "Meera", "family")
+
+print(search_by_tag(contacts, "Hostel"))
+print(search_by_tag(contacts, "family"))
+print(search_by_tag(contacts, "college"))
+        
