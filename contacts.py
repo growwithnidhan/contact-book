@@ -47,7 +47,9 @@ def search_by_tag(contacts, tag):
 def show_menu():
     print("\n1. Add contact")
     print("2. Find contact")
-    print("0. Quit")
+    print("3. Delete contact")
+    print("4. add tag")
+    print("5. search by tag")
 
 contacts = {}
 
@@ -75,8 +77,34 @@ while True:
         else:
            print(found)
 
+    elif choice == "3":
+        name = input("etter the name to be deleted: ")
+        deleted = delete_contact(contacts,name)
+        if deleted:
+            print("deleted")
+        else:
+            print("not found")
+
+    elif choice == "4":
+        name = input("enter the name: ")
+        tag = input("enter the tag to be added: ")
+        tagadd = add_tag(contacts,name,tag)
+        if tagadd:
+            print("tag addedd")
+        else:
+            print("not found!")
+
+    elif choice == "5":
+        tag =input("enter the tag: ")
+        match = search_by_tag(contacts,tag)
+        if match:
+            print(match)
+        else:
+            print("no contact with that tag")
+
     else:
         print("invalid choice")
+
 
             
             
